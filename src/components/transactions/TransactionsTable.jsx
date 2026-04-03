@@ -304,14 +304,14 @@ export default function TransactionsTable() {
                           <div className="flex items-center justify-end gap-2">
                             <button
                               onClick={() => handleEditTransaction(t)}
-                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-white/10 bg-white/90 dark:bg-white/[0.04] text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/[0.08] transition-colors"
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-white/10 bg-white/90 dark:bg-white/[0.04] text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/[0.08] transition-colors cursor-pointer"
                             >
                               <Pencil className="w-3.5 h-3.5" />
                               Edit
                             </button>
                             <button
                               onClick={() => handleDeleteTransaction(t)}
-                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-rose-200/80 dark:border-rose-500/15 bg-rose-50/80 dark:bg-rose-500/10 text-rose-700 dark:text-rose-300 hover:bg-rose-100 dark:hover:bg-rose-500/15 transition-colors"
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-rose-200/80 dark:border-rose-500/15 bg-rose-50/80 dark:bg-rose-500/10 text-rose-700 dark:text-rose-300 hover:bg-rose-100 dark:hover:bg-rose-500/15 transition-colors cursor-pointer"
                             >
                               <Trash2 className="w-3.5 h-3.5" />
                               Delete
