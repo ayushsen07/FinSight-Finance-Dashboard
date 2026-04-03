@@ -26,7 +26,7 @@ function AppLayout() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="flex h-screen bg-slate-100 dark:bg-[#080e1a] overflow-hidden transition-colors duration-300">
+    <div className="flex h-screen bg-transparent overflow-hidden transition-colors duration-300">
       {/* Sidebar */}
       <Sidebar
         mobileOpen={mobileMenuOpen}

@@ -37,13 +37,13 @@ export default function Sidebar({ mobileOpen, onClose }) {
           flex flex-col transition-all duration-500 ease-in-out
           md:translate-x-0 md:static md:z-auto
           ${mobileOpen ? 'translate-x-0' : '-translate-x-full'}
-          bg-slate-50 dark:bg-[#060c18] border-r border-slate-200 dark:border-white/5
+          bg-white/70 dark:bg-[#060c18] border-r border-slate-200/70 dark:border-white/5
           hidden md:flex
         `}
       >
         {/* Logo */}
         <div className="flex items-center gap-3 px-6 py-5 border-b border-slate-200 dark:border-white/5">
-          <div className="w-10 h-10 rounded-xl bg-slate-200 dark:bg-gradient-to-br dark:from-[#00c2ff] dark:to-[#0ea5e9] flex items-center justify-center shadow-sm dark:shadow-lg dark:shadow-cyan-500/30">
+          <div className="w-10 h-10 rounded-xl bg-slate-900/[0.05] dark:bg-gradient-to-br dark:from-[#22c7f2] dark:to-[#0ea5e9] flex items-center justify-center shadow-sm dark:shadow-lg dark:shadow-cyan-500/20">
             <TrendingUp className="w-5 h-5 text-slate-700 dark:text-white" />
           </div>
           <div>
@@ -68,7 +68,7 @@ export default function Sidebar({ mobileOpen, onClose }) {
                   cursor-pointer
                   ${
                     isActive
-                      ? 'bg-white shadow-sm border border-slate-200 text-slate-900 dark:bg-cyan-500/10 dark:text-cyan-400 dark:border-cyan-500/20'
+                      ? 'bg-white shadow-sm border border-slate-200 text-slate-900 dark:bg-cyan-500/10 dark:text-cyan-300 dark:border-cyan-500/16'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/50 dark:text-slate-400 dark:hover:text-slate-200 dark:hover:bg-white/5 border border-transparent'
                   }
                 `}
@@ -84,7 +84,7 @@ export default function Sidebar({ mobileOpen, onClose }) {
         </nav>
 
         {/* Footer — user card */}
-        <div className="mx-3 mb-4 p-3 rounded-xl bg-white border border-slate-200 shadow-sm dark:bg-white/[0.03] dark:border-white/5">
+        <div className="mx-3 mb-4 p-3 rounded-xl bg-white/90 border border-slate-200 shadow-sm dark:bg-white/[0.03] dark:border-white/5">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-full bg-slate-100 dark:bg-cyan-500/10 flex items-center justify-center text-xs font-bold text-slate-700 dark:text-cyan-400">
               AS
@@ -99,10 +99,10 @@ export default function Sidebar({ mobileOpen, onClose }) {
 
       {/* ── Mobile slide-out sidebar (drawer) ─────────────────── */}
       {mobileOpen && (
-        <aside className="fixed top-0 left-0 z-50 h-screen w-64 flex flex-col bg-slate-50 dark:bg-[#060c18] border-r border-slate-200 dark:border-white/5 md:hidden animate-fade-in">
+        <aside className="fixed top-0 left-0 z-50 h-screen w-64 flex flex-col bg-white/95 dark:bg-[#060c18] border-r border-slate-200/70 dark:border-white/5 md:hidden animate-fade-in">
           {/* Logo */}
           <div className="flex items-center gap-3 px-6 py-5 border-b border-slate-200 dark:border-white/5">
-            <div className="w-10 h-10 rounded-xl bg-slate-200 dark:bg-gradient-to-br dark:from-[#00c2ff] dark:to-[#0ea5e9] flex items-center justify-center shadow-sm dark:shadow-lg dark:shadow-cyan-500/30">
+            <div className="w-10 h-10 rounded-xl bg-slate-900/[0.05] dark:bg-gradient-to-br dark:from-[#22c7f2] dark:to-[#0ea5e9] flex items-center justify-center shadow-sm dark:shadow-lg dark:shadow-cyan-500/20">
               <TrendingUp className="w-5 h-5 text-slate-700 dark:text-white" />
             </div>
             <div>
@@ -127,7 +127,7 @@ export default function Sidebar({ mobileOpen, onClose }) {
                     cursor-pointer
                     ${
                       isActive
-                        ? 'bg-white shadow-sm border border-slate-200 text-slate-900 dark:bg-cyan-500/10 dark:text-cyan-400 dark:border-cyan-500/20'
+                        ? 'bg-white shadow-sm border border-slate-200 text-slate-900 dark:bg-cyan-500/10 dark:text-cyan-300 dark:border-cyan-500/16'
                         : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/50 dark:text-slate-400 dark:hover:text-slate-200 dark:hover:bg-white/5 border border-transparent'
                     }
                   `}
@@ -143,7 +143,7 @@ export default function Sidebar({ mobileOpen, onClose }) {
           </nav>
 
           {/* Footer */}
-          <div className="mx-3 mb-4 p-3 rounded-xl bg-white border border-slate-200 shadow-sm dark:bg-white/[0.03] dark:border-white/5">
+          <div className="mx-3 mb-4 p-3 rounded-xl bg-white/90 border border-slate-200 shadow-sm dark:bg-white/[0.03] dark:border-white/5">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-full bg-slate-100 dark:bg-cyan-500/10 flex items-center justify-center text-xs font-bold text-slate-700 dark:text-cyan-400">
                 AS
@@ -158,7 +158,7 @@ export default function Sidebar({ mobileOpen, onClose }) {
       )}
 
       {/* ── Mobile bottom tab bar ─────────────────────────────── */}
-      <nav className="fixed bottom-0 inset-x-0 bg-slate-50 dark:bg-[#060c18] border-t border-slate-200 dark:border-white/5 flex justify-around py-3 z-50 h-16 md:hidden mobile-bottom-nav">
+      <nav className="fixed bottom-0 inset-x-0 bg-white/90 dark:bg-[#060c18] border-t border-slate-200/70 dark:border-white/5 flex justify-around py-3 z-50 h-16 md:hidden mobile-bottom-nav backdrop-blur-xl">
         {navItems.map(({ id, icon: Icon }) => {
           const isActive = activeSection === id;
           return (

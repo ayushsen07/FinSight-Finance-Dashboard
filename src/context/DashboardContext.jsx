@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback, useMemo } from 'react';
 import defaultTransactions from '../data/transactions';
 
 const DashboardContext = createContext(null);
@@ -69,6 +69,12 @@ export function DashboardProvider({ children }) {
     setTransactions((prev) => prev.filter((t) => t.id !== id));
   }, []);
 
+  const updateTransaction = useCallback((updatedTxn) => {
+    setTransactions((prev) =>
+      prev.map((t) => (t.id === updatedTxn.id ? { ...t, ...updatedTxn } : t))
+    );
+  }, []);
+
   const updateFilter = useCallback((key, value) => {
     setActiveFilters((prev) => ({ ...prev, [key]: value }));
   }, []);
@@ -96,7 +102,7 @@ export function DashboardProvider({ children }) {
 
   const balance = totalIncome - totalExpenses;
 
-  const value = {
+  const value = useMemo(() => ({
     transactions,
     activeFilters,
     selectedRole,
@@ -107,6 +113,7 @@ export function DashboardProvider({ children }) {
     balance,
     addTransaction,
     deleteTransaction,
+    updateTransaction,
     setActiveFilters,
     updateFilter,
     resetFilters,
@@ -114,7 +121,23 @@ export function DashboardProvider({ children }) {
     toggleRole,
     toggleDarkMode,
     setActiveSection,
-  };
+  }), [
+    transactions,
+    activeFilters,
+    selectedRole,
+    darkMode,
+    activeSection,
+    totalIncome,
+    totalExpenses,
+    balance,
+    addTransaction,
+    deleteTransaction,
+    updateTransaction,
+    updateFilter,
+    resetFilters,
+    toggleRole,
+    toggleDarkMode,
+  ]);
 
   return (
     <DashboardContext.Provider value={value}>
