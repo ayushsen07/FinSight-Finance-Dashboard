@@ -12,7 +12,7 @@ visualizations — all powered by mock data and client-side state.
 
 ## Live Demo
 
-🔗 [finsight-demo.vercel.app](https://your-vercel-url.vercel.app)
+🔗 [finsight.vercel.app](https://my-finsight.vercel.app)
 
 - Toggle between **Admin** (add/edit) and **Viewer** (read-only) roles
 - All transactions are pre-loaded; data persists via localStorage
@@ -32,14 +32,6 @@ visualizations — all powered by mock data and client-side state.
 - Dark mode
 - Local storage persistence for transactions and theme preference
 - CSV export for transactions
-
----
-
-## Screenshots
-
-| Dashboard | Transactions | Insights |
-|---|---|---|
-|  | ![](./screenshots/transactions.png) | ![](./screenshots/insights.png) |
 
 ---
 
