@@ -28,7 +28,7 @@ export default function Header() {
             <p className="text-base sm:text-lg font-bold tracking-tight text-slate-900 dark:text-slate-100">
               FinSight
             </p>
-            <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-slate-500 dark:text-slate-500">
+            <p className="hidden md:block text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-slate-500 dark:text-slate-500">
               Finance Dashboard
             </p>
           </div>
@@ -41,10 +41,9 @@ export default function Header() {
               className={`
                 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold
                 transition-all duration-300 cursor-pointer
-                ${
-                  selectedRole === 'admin'
-                    ? 'bg-white shadow-sm border border-slate-100 dark:border-transparent dark:bg-cyan-500/85 text-slate-800 dark:text-white dark:shadow-lg dark:shadow-cyan-500/15'
-                    : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'
+                ${selectedRole === 'admin'
+                  ? 'bg-white shadow-sm border border-slate-100 dark:border-transparent dark:bg-cyan-500/85 text-slate-800 dark:text-white dark:shadow-lg dark:shadow-cyan-500/15'
+                  : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'
                 }
               `}
             >
@@ -56,10 +55,9 @@ export default function Header() {
               className={`
                 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold
                 transition-all duration-300 cursor-pointer
-                ${
-                  selectedRole === 'viewer'
-                    ? 'bg-white shadow-sm border border-slate-100 dark:border-transparent dark:bg-slate-700 text-slate-800 dark:text-white dark:shadow-lg'
-                    : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'
+                ${selectedRole === 'viewer'
+                  ? 'bg-white shadow-sm border border-slate-100 dark:border-transparent dark:bg-slate-700 text-slate-800 dark:text-white dark:shadow-lg'
+                  : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'
                 }
               `}
             >

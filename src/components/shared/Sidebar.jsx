@@ -28,9 +28,6 @@ export default function Sidebar() {
           </div>
           <div>
             <h1 className="text-lg font-bold tracking-tight text-slate-900 dark:text-slate-100">FinSight</h1>
-            <p className="text-[10px] uppercase tracking-widest text-slate-500 dark:text-slate-500">
-              FinTech Dashboard
-            </p>
           </div>
         </div>
 
