@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { DashboardProvider, useDashboard } from './context/DashboardContext';
 import { ToastProvider } from './components/shared/Toast';
 import Sidebar from './components/shared/Sidebar';
@@ -23,19 +22,12 @@ function MainContent() {
 }
 
 function AppLayout() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   return (
     <div className="flex h-screen bg-transparent overflow-hidden transition-colors duration-300">
-      {/* Sidebar */}
-      <Sidebar
-        mobileOpen={mobileMenuOpen}
-        onClose={() => setMobileMenuOpen(false)}
-      />
+      <Sidebar />
 
-      {/* Main area */}
-      <div className="flex-1 flex flex-col min-h-screen overflow-hidden">
-        <Header onMenuClick={() => setMobileMenuOpen(true)} />
+      <div className="flex-1 flex flex-col min-h-screen overflow-hidden md:pl-64">
+        <Header />
 
         <main className="flex-1 overflow-y-auto pb-20 md:pb-0">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">

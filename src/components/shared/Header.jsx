@@ -1,8 +1,8 @@
 import { useDashboard } from '../../context/DashboardContext';
 import { useToast } from './Toast';
-import { Sun, Moon, Menu, Shield, Eye } from 'lucide-react';
+import { Sun, Moon, Shield, Eye, TrendingUp } from 'lucide-react';
 
-export default function Header({ onMenuClick }) {
+export default function Header() {
   const { selectedRole, toggleRole, darkMode, toggleDarkMode } = useDashboard();
   const { addToast } = useToast();
 
@@ -19,16 +19,20 @@ export default function Header({ onMenuClick }) {
 
   return (
     <header className="sticky top-0 z-30 backdrop-blur-xl bg-white/55 dark:bg-[#09111f]/82 border-b border-slate-200/70 dark:border-white/6 transition-colors">
-      <div className="flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
-        <button
-          onClick={onMenuClick}
-          className="md:hidden p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-white/5 transition-colors cursor-pointer"
-          aria-label="Open menu"
-        >
-          <Menu className="w-5 h-5" />
-        </button>
-
-        <div className="flex-1" />
+      <div className="flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16 gap-3">
+        <div className="flex items-center gap-3 min-w-0">
+          <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-slate-900/[0.05] dark:bg-gradient-to-br dark:from-[#22c7f2] dark:to-[#0ea5e9] shadow-sm dark:shadow-lg dark:shadow-cyan-500/15">
+            <TrendingUp className="w-5 h-5 text-slate-700 dark:text-white" />
+          </div>
+          <div className="min-w-0">
+            <p className="text-base sm:text-lg font-bold tracking-tight text-slate-900 dark:text-slate-100">
+              FinSight
+            </p>
+            <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-slate-500 dark:text-slate-500">
+              Finance Dashboard
+            </p>
+          </div>
+        </div>
 
         <div className="flex items-center gap-2 sm:gap-3">
           <div className="flex items-center bg-slate-900/[0.04] dark:bg-white/[0.04] border border-slate-200/70 dark:border-white/8 rounded-xl p-0.5 transition-colors">

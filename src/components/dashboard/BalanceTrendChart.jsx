@@ -92,7 +92,7 @@ export default function BalanceTrendChart() {
                 axisLine={false}
                 tickLine={false}
                 tick={{ fontSize: 11, fill: '#64748b' }}
-                tickFormatter={(value) => `â‚¹${(value / 1000).toFixed(0)}k`}
+                tickFormatter={(value) => `${(value / 1000).toFixed(0)}k`}
                 width={50}
               />
               <Tooltip
