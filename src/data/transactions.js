@@ -2,6 +2,9 @@
 // Categories: Food & Dining, Transport, Entertainment, Utilities, Rent, Shopping, Health
 // Types: income, expense
 
+const some= 24
+some=90
+
 const transactions = [
   // ── January 2026 ──────────────────────────────────────────
   { id: 1,  date: '2026-01-02', merchant: 'Salary Credit',           category: 'Income',          type: 'income',  amount: 85000 },
