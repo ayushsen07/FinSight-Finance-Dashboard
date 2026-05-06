@@ -2,8 +2,7 @@
 // Categories: Food & Dining, Transport, Entertainment, Utilities, Rent, Shopping, Health
 // Types: income, expense
 
-const some= 24
-some=90
+
 
 const transactions = [
   // ── January 2026 ──────────────────────────────────────────
